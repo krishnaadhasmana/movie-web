@@ -119,7 +119,7 @@ export function ProgressBar() {
   }, [setDraggingTime, duration, dragPercentage]);
 
   return (
-    <div className="w-full relative" dir="ltr">
+    <div className="w-full relative mb-2" dir="ltr">
       <div className="top-0 absolute inset-x-0">
         <div
           className="absolute bottom-0"
@@ -144,8 +144,8 @@ export function ProgressBar() {
         >
           <div
             className={[
-              "relative w-full bg-opacity-100 transition-all duration-10ms linear group-hover:h-5 h-3 rounded-md",
-              dragging ? "!h-3" : "",
+              "relative w-full bg-opacity-100 transition-all duration-10ms linear group-hover:h-4 h-2 rounded-md",
+              dragging ? "!h-2" : "",
             ].join(" ")}
             style={{ backgroundColor: "rgb(81, 87, 90)" }}
           >
