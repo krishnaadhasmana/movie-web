@@ -89,7 +89,7 @@
       "dmca": "DMCA",
       "github": "GitHub"
     },
-    "tagline": "Watch your favourite shows and movies with this open source streaming app."
+    "tagline": "Open. Source. Streaming."
   },
   "global": {
     "name": "movie-web",
@@ -535,7 +535,7 @@
       "backgroundLabel": "Background opacity",
       "backgroundBlurLabel": "Background blur",
       "colorLabel": "Color",
-      "previewQuote": "I must not fear. Fear is the mind-killer.",
+      "previewQuote": "You're really passionate about subtitles huh",
       "textSizeLabel": "Text size",
       "title": "Subtitles"
     },
