@@ -136,7 +136,7 @@ export function ProgressBar() {
 
       <div className="w-full" ref={ref}>
         <div
-          className="group w-full h-8 flex items-center cursor-pointer"
+          className="group w-full h-4 flex items-center cursor-pointer"
           onMouseDown={dragMouseDown}
           onTouchStart={dragMouseDown}
           onMouseLeave={mouseLeave}
@@ -144,13 +144,14 @@ export function ProgressBar() {
         >
           <div
             className={[
-              "relative w-full h-1 bg-progress-background bg-opacity-25 rounded-full transition-[height] duration-100 group-hover:h-1.5",
-              dragging ? "!h-1.5" : "",
+              "relative w-full bg-opacity-100 transition-all duration-10ms linear group-hover:h-5 h-3 rounded-md",
+              dragging ? "!h-3" : "",
             ].join(" ")}
+            style={{ backgroundColor: "rgb(81, 87, 90)" }}
           >
             {/* Pre-loaded content bar */}
             <div
-              className="absolute top-0 left-0 h-full rounded-full bg-progress-preloaded bg-opacity-50 flex justify-end items-center"
+              className="absolute top-0 left-0 h-full rounded-md bg-progress-preloaded flex justify-end items-center bg-opacity-0"
               style={{
                 width: `${(buffered / duration) * 100}%`,
               }}
@@ -158,8 +159,11 @@ export function ProgressBar() {
 
             {/* Actual progress bar */}
             <div
-              className="absolute top-0 dir-neutral:left-0 h-full rounded-full bg-progress-filled flex justify-end items-center"
+              className="absolute top-0 dir-neutral:left-0 h-full bg-progress-filled flex justify-end items-center overflow-hidden rounded-l-md"
               style={{
+                transition: dragging
+                  ? "width 0.3s ease-out"
+                  : "width 0.3s ease-out",
                 width: `${
                   Math.max(
                     0,
@@ -169,14 +173,18 @@ export function ProgressBar() {
                     ),
                   ) * 100
                 }%`,
+                backgroundColor: dragging
+                  ? "rgb(255 255 255)"
+                  : "rgb(182 193 206)",
               }}
             >
-              <div
+              {/* Seeker dot on progress bar */}
+              {/* <div
                 className={[
-                  "w-[1rem] min-w-[1rem] h-[1rem] rounded-full transform translate-x-1/2 scale-0 group-hover:scale-100 bg-white transition-[transform] duration-100",
-                  isSeeking ? "scale-100" : "",
+                  "w-3 min-w-3 h-3 rounded-full bg-white transition-all duration-200 ease-in-out transform -translate-y-1/2 group-hover:scale-125",
+                  isSeeking ? "scale-125" : "",
                 ].join(" ")}
-              />
+              /> */}
             </div>
           </div>
         </div>
