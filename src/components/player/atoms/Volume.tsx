@@ -66,11 +66,11 @@ export function Volume(props: Props) {
     >
       <div className="pointer-events-auto flex cursor-pointer items-center py-0">
         <div className="px-4 text-2xl text-white" onClick={handleClick}>
-          <Icon icon={percentage > 0 ? Icons.VOLUME : Icons.VOLUME_X} />
+          {/* <Icon icon={percentage > 0 ? Icons.VOLUME : Icons.VOLUME_X} /> */}
         </div>
         <div
           className={`linear -ml-2 w-0 overflow-hidden transition-[width,opacity] duration-300 ${
-            hovering || dragging ? "!w-24 opacity-100" : "w-4 opacity-0"
+            hovering || dragging ? "!w-24 opacity-100" : "w-24 opacity-100"
           }`}
         >
           <div

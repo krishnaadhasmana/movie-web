@@ -95,30 +95,32 @@ export function PlayerPart(props: PlayerPartProps) {
                 <Player.Pause />
                 <Player.SkipBackward />
                 <Player.SkipForward />
+                {/* todo make volume bar always visible */}
                 <Player.Volume />
                 <Player.Time />
               </>
             ) : null}
           </Player.LeftSideControls>
-          <div className="flex items-center space-x-3">
-            <Player.Episodes />
+
+          <div className="flex items-center">
             {status === playerStatus.PLAYING ? (
               <>
-                <Player.Pip />
+                {/* <Player.Pip />
                 <Player.Airplay />
-                <Player.Chromecast />
+                <Player.Chromecast /> */}
               </>
             ) : null}
             {status === playerStatus.PLAYBACK_ERROR ||
             status === playerStatus.PLAYING ? (
               <Player.Settings />
             ) : null}
+            <Player.Episodes />
             <Player.Fullscreen />
           </div>
         </div>
         <div className="grid grid-cols-[2.5rem,1fr,2.5rem] gap-3 lg:hidden">
           <div />
-          <div className="flex justify-center space-x-3">
+          <div className="flex justify-center">
             {status === playerStatus.PLAYING ? <Player.Pip /> : null}
             <Player.Episodes />
             {status === playerStatus.PLAYING ? <Player.Settings /> : null}

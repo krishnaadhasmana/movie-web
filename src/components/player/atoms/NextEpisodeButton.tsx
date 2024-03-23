@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import { Icon, Icons } from "@/components/Icon";
 import { usePlayerMeta } from "@/components/player/hooks/usePlayerMeta";
+import { Flare } from "@/components/utils/Flare";
 import { Transition } from "@/components/utils/Transition";
 import { PlayerMeta } from "@/stores/player/slices/source";
 import { usePlayerStore } from "@/stores/player/store";
@@ -92,23 +93,64 @@ export function NextEpisodeButton(props: {
     >
       <div
         className={classNames([
-          "absolute bottom-0 right-0 transition-[bottom] duration-200 flex items-center space-x-3",
+          "absolute bottom-0 right-0 transition-[bottom] duration-200 flex items-center space-x-3 mb-7",
           bottom,
         ])}
       >
-        <Button
-          className="py-px box-content bg-buttons-secondary hover:bg-buttons-secondaryHover bg-opacity-90 text-buttons-secondaryText"
-          onClick={hideNextEpisodeButton}
+        <Flare.Base
+          className={`
+      group rounded-2xl transition-colors duration-100 focus:relative focus:z-10 bg-video-context-hoverColor tabbable opacity-90"
+      `}
         >
-          {t("player.nextEpisode.cancel")}
-        </Button>
-        <Button
-          onClick={() => loadNextEpisode()}
-          className="bg-buttons-primary hover:bg-buttons-primaryHover text-buttons-primaryText flex justify-center items-center"
+          <Flare.Light
+            flareSize={100}
+            cssColorVar="--colors-mediaCard-hoverAccent"
+            backgroundClass="bg-video-context-hoverColor duration-50"
+            className={classNames({
+              "rounded-2xl bg-video-context-hoverColor group-hover:opacity-100":
+                true,
+            })}
+          />
+          <Flare.Child
+            className={`pointer-events-auto relative p-1 transition-transform duration-100 group-hover:scale-95 bottom-0"
+        }`}
+          >
+            <Button
+              className="py-px box-content bg-opacity-90 text-buttons-secondaryText"
+              onClick={hideNextEpisodeButton}
+            >
+              {t("player.nextEpisode.cancel")}
+            </Button>
+          </Flare.Child>
+        </Flare.Base>
+
+        <Flare.Base
+          className={`
+      group rounded-2xl transition-colors duration-100 focus:relative focus:z-10 tabbable bg-slate-400 opacity-90"
+      `}
         >
-          <Icon className="text-xl mr-1" icon={Icons.SKIP_EPISODE} />
-          {t("player.nextEpisode.next")}
-        </Button>
+          <Flare.Light
+            flareSize={100}
+            cssColorVar="--colors-mediaCard-hoverAccent"
+            backgroundClass="duration-50, bg-white"
+            className={classNames({
+              "rounded-2xl bg-video-context-hoverColor group-hover:opacity-100":
+                true,
+            })}
+          />
+          <Flare.Child
+            className={`pointer-events-auto relative p-1 transition-transform duration-100 group-hover:scale-95 bottom-0"
+        }`}
+          >
+            <Button
+              onClick={() => loadNextEpisode()}
+              className="text-buttons-primaryText flex justify-center items-center"
+            >
+              <Icon className="text-xl mr-1" icon={Icons.SKIP_EPISODE} />
+              {t("player.nextEpisode.next")}
+            </Button>
+          </Flare.Child>
+        </Flare.Base>
       </div>
     </Transition>
   );
