@@ -24,7 +24,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
     return (
       <Flare.Base
         className={c({
-          "hover:flare-enabled group flex flex-col rounded-[28px] transition-colors sm:flex-row sm:items-center relative":
+          "hover:flare-enabled group flex flex-col rounded-[10px] transition-colors sm:flex-row sm:items-center relative":
             true,
           "bg-search-background": !focused,
           "bg-search-focused": focused,
@@ -33,7 +33,7 @@ export const SearchBarInput = forwardRef<HTMLInputElement, SearchBarProps>(
         <Flare.Light
           flareSize={400}
           enabled={focused}
-          className="rounded-[28px]"
+          className="rounded-[10px]"
           backgroundClass={c({
             "transition-colors": true,
             "bg-search-background": !focused,

@@ -169,11 +169,23 @@ export async function multiSearch(
 ): Promise<(TMDBMovieSearchResult | TMDBShowSearchResult)[]> {
   const data = await get<TMDBSearchResult>("search/multi", {
     query,
-    include_adult: false,
+    include_adult: true,
     language: "en-US",
     page: 1,
   });
   // filter out results that aren't movies or shows
+  const results = data.results.filter(
+    (r) =>
+      r.media_type === TMDBContentTypes.MOVIE ||
+      r.media_type === TMDBContentTypes.TV,
+  );
+  return results;
+}
+
+export async function getTrending(): Promise<
+  (TMDBMovieSearchResult | TMDBShowSearchResult)[]
+> {
+  const data = await get<TMDBSearchResult>("trending/all/day");
   const results = data.results.filter(
     (r) =>
       r.media_type === TMDBContentTypes.MOVIE ||
