@@ -1,4 +1,5 @@
-#  Movie-web fork with Trending Movie/Show Lists, Revamped Video Player and other QoL changes
+## Movie-web fork
+Includes Trending Movie/Show Lists, Revamped Video Player and other QoL changes
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,vite,ts" />
