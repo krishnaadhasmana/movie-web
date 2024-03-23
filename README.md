@@ -1,4 +1,4 @@
-**  forked from movie-web **
+#  Movie-web fork with Trending Movie/Show Lists, Revamped Video Player and other QoL changes
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=react,vite,ts" />
