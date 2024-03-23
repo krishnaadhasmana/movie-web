@@ -103,13 +103,13 @@ export function PlayerPart(props: PlayerPartProps) {
           </Player.LeftSideControls>
 
           <div className="flex items-center">
-            {status === playerStatus.PLAYING ? (
+            {/* {status === playerStatus.PLAYING ? (
               <>
-                {/* <Player.Pip />
+                <Player.Pip />
                 <Player.Airplay />
-                <Player.Chromecast /> */}
+                <Player.Chromecast />
               </>
-            ) : null}
+            ) : null} */}
             {status === playerStatus.PLAYBACK_ERROR ||
             status === playerStatus.PLAYING ? (
               <Player.Settings />
