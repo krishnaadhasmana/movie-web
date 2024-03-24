@@ -7,6 +7,7 @@ import { Icons } from "@/components/Icon";
 import { LinksDropdown } from "@/components/LinksDropdown";
 import { Lightbar } from "@/components/utils/Lightbar";
 import { useAuth } from "@/hooks/auth/useAuth";
+import { getGradientStatus, setGradientStatus } from "@/pages/HomePage";
 import { BlurEllipsis } from "@/pages/layouts/SubPageLayout";
 import { conf } from "@/setup/config";
 import { useBannerSize } from "@/stores/banner";
@@ -84,7 +85,9 @@ export function Navigation(props: NavigationProps) {
                 className="block tabbable rounded-full text-xs ssm:text-base"
                 to="/"
               >
-                <BrandPill clickable />
+                <div onClick={() => setGradientStatus(!getGradientStatus())}>
+                  <BrandPill clickable />
+                </div>
               </Link>
               {/* <a
                 href={conf().DISCORD_LINK}

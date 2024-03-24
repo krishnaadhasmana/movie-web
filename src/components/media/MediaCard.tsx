@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { mediaItemToId } from "@/backend/metadata/tmdb";
 import { DotList } from "@/components/text/DotList";
 import { Flare } from "@/components/utils/Flare";
+import { getGradientStatus } from "@/pages/HomePage";
 import { MediaItem } from "@/utils/mediaTypes";
 
 import { IconPatch } from "../buttons/IconPatch";
@@ -42,20 +43,22 @@ function MediaCardContent({
 
   return (
     <Flare.Base
-      className={`group -m-3 mb-2 rounded-xl bg-background-main transition-colors duration-100 focus:relative focus:z-10 ${
-        canLink ? "hover:bg-mediaCard-hoverBackground tabbable" : ""
+      className={`group -m-3 mb-2 rounded-xl transition-colors duration-100 focus:relative focus:z-10 bg-transparent ${
+        canLink ? "hover:bg-transparent tabbable" : ""
       }`}
       tabIndex={canLink ? 0 : -1}
       onKeyUp={(e) => e.key === "Enter" && e.currentTarget.click()}
     >
-      <Flare.Light
-        flareSize={300}
-        cssColorVar="--colors-mediaCard-hoverAccent"
-        backgroundClass="bg-mediaCard-hoverBackground duration-100"
-        className={classNames({
-          "rounded-xl bg-background-main group-hover:opacity-100": canLink,
-        })}
-      />
+      {!getGradientStatus() && (
+        <Flare.Light
+          flareSize={300}
+          cssColorVar="--colors-mediaCard-hoverAccent"
+          backgroundClass="bg-mediaCard-hoverBackground duration-100"
+          className={classNames({
+            "rounded-xl bg-background-main group-hover:opacity-100": canLink,
+          })}
+        />
+      )}
       <Flare.Child
         className={`pointer-events-auto relative mb-2 p-3 transition-transform duration-100 ${
           canLink ? "group-hover:scale-95" : ""

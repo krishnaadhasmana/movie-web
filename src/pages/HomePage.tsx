@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 
 import { WideContainer } from "@/components/layout/WideContainer";
+import { GradientBg } from "@/components/media/GradientBg";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSearchQuery } from "@/hooks/useSearchQuery";
 import { HomeLayout } from "@/pages/layouts/HomeLayout";
@@ -32,15 +33,26 @@ function useSearch(search: string) {
   };
 }
 
+let GradientStatus: boolean = true;
+
+export const getGradientStatus = (): boolean => GradientStatus;
+
+export const setGradientStatus = (value: boolean): void => {
+  GradientStatus = value;
+};
+
 export function HomePage() {
   const { t } = useTranslation();
   const [showBg, setShowBg] = useState<boolean>(false);
   const searchParams = useSearchQuery();
   const [search] = searchParams;
   const s = useSearch(search);
+  const [gradient, setGradient] = useState<boolean>(false);
 
   return (
+    // <GlowAndTextEffects />
     <HomeLayout showBg={showBg}>
+      {getGradientStatus() && <GradientBg />}
       <div className="mb-16 sm:mb-24">
         <Helmet>
           <title>{t("global.name")}</title>
