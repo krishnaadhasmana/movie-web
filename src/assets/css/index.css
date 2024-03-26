@@ -282,6 +282,16 @@ input[type=range].styled-slider.slider-progress::-ms-fill-lower {
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .GradientBlob {
   /* background-color: white;
   height: 34vmax;
@@ -312,6 +322,7 @@ input[type=range].styled-slider.slider-progress::-ms-fill-lower {
   top: 0;
   transform: translate(calc(-50% + 15px), -50%);
   z-index:0;
+  animation: fadeIn 5s;
   /* animation: pulse 7s infinite; */
 
   /* left: 50%; */

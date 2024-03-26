@@ -50,28 +50,30 @@ export function HomePage() {
   const [gradient, setGradient] = useState<boolean>(false);
 
   return (
-    // <GlowAndTextEffects />
-    <HomeLayout showBg={showBg}>
-      {getGradientStatus() && <GradientBg />}
-      <div className="mb-16 sm:mb-24">
-        <Helmet>
-          <title>{t("global.name")}</title>
-        </Helmet>
-        <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
-      </div>
-      <WideContainer>
-        {s.loading ? (
-          <SearchLoadingPart />
-        ) : s.searching ? (
-          <SearchListPart searchQuery={search} />
-        ) : (
-          <>
-            <BookmarksPart />
-            <WatchingPart />
-            <TrendingPart />
-          </>
-        )}
-      </WideContainer>
-    </HomeLayout>
+    <div style={{ overflowX: "hidden" }}>
+      <HomeLayout showBg={showBg}>
+        {getGradientStatus() && <GradientBg />}
+        <div className="mb-16 sm:mb-24">
+          <Helmet>
+            <title>{t("global.name")}</title>
+          </Helmet>
+          <HeroPart searchParams={searchParams} setIsSticky={setShowBg} />
+        </div>
+        <WideContainer>
+          {s.loading ? (
+            <SearchLoadingPart />
+          ) : (
+            s.searching && <SearchListPart searchQuery={search} />
+          )}
+          {!s.loading && !s.searching && (
+            <>
+              <BookmarksPart />
+              <WatchingPart />
+              <TrendingPart />
+            </>
+          )}
+        </WideContainer>
+      </HomeLayout>
+    </div>
   );
 }

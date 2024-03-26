@@ -85,9 +85,7 @@ export function Navigation(props: NavigationProps) {
                 className="block tabbable rounded-full text-xs ssm:text-base"
                 to="/"
               >
-                <div onClick={() => setGradientStatus(!getGradientStatus())}>
-                  <BrandPill clickable />
-                </div>
+                <BrandPill clickable />
               </Link>
               {/* <a
                 href={conf().DISCORD_LINK}
@@ -105,6 +103,17 @@ export function Navigation(props: NavigationProps) {
               >
                 <IconPatch icon={Icons.GITHUB} clickable downsized />
               </a>
+              <div
+                onClick={() => setGradientStatus(!getGradientStatus())}
+                className="text-xl text-white tabbable rounded-full"
+              >
+                <Link
+                  // className="block tabbable rounded-full text-xs ssm:text-base"
+                  to="/"
+                >
+                  <IconPatch icon={Icons.WAND} clickable downsized />
+                </Link>
+              </div>
             </div>
             <div className="relative pointer-events-auto">
               <LinksDropdown>
