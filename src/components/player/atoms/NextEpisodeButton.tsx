@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useAsync } from "react-use";
 
 import { getMetaFromId } from "@/backend/metadata/getmeta";
+import { Flare } from "@/components/utils/Flare";
 import { MWMediaType, MWSeasonMeta } from "@/backend/metadata/types/mw";
 import { Icon, Icons } from "@/components/Icon";
 import { usePlayerMeta } from "@/components/player/hooks/usePlayerMeta";

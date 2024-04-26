@@ -71,11 +71,11 @@ export function Volume(props: Props) {
     >
       <div className="pointer-events-auto flex cursor-pointer items-center py-0 touch-none">
         <div className="px-4 text-2xl text-white" onClick={handleClick}>
-          <Icon icon={percentage > 0 ? Icons.VOLUME : Icons.VOLUME_X} />
+          {/* <Icon icon={percentage > 0 ? Icons.VOLUME : Icons.VOLUME_X} /> */}
         </div>
         <div
           className={`linear -ml-2 w-0 overflow-hidden transition-[width,opacity] duration-300 ${
-            hovering || dragging ? "!w-24 opacity-100" : "w-4 opacity-0"
+            hovering || dragging ? "!w-24 opacity-100" : "w-24 opacity-100"
           }`}
         >
           <div
@@ -84,17 +84,33 @@ export function Volume(props: Props) {
             onMouseDown={dragMouseDown}
             onTouchStart={dragMouseDown}
           >
-            <div className="relative h-1 flex-1 rounded-full bg-gray-500 bg-opacity-50">
+            {/* <div className="relative h-1 flex-1 rounded-full bg-gray-500 bg-opacity-50" */}
+            <div
+              className={[
+                "relative w-full bg-opacity-100 transition-all duration-10ms linear group-hover:h-4 h-2 rounded-md",
+                dragging ? "!h-2" : "",
+              ].join(" ")}
+              style={{ backgroundColor: "rgb(81, 87, 90)" }}
+            >
               <div
-                className="absolute inset-y-0 left-0 flex items-center justify-end rounded-full bg-video-audio-set"
+                // className="absolute inset-y-0 left-0 flex items-center justify-end rounded-full bg-video-audio-set"
+                // style={{
+                //   width: percentageString,
+                // }}
+
+                className="absolute top-0 dir-neutral:left-0 h-full bg-progress-filled flex justify-end items-center overflow-hidden rounded-md"
                 style={{
+                  transition: dragging
+                    ? "width 0.3s ease-out"
+                    : "width 0.3s ease-out",
                   width: percentageString,
+                  backgroundColor: dragging
+                    ? "rgb(255 255 255)"
+                    : "rgb(182 193 206)",
                 }}
-              >
-                <div className="absolute h-3 w-3 translate-x-1/2 rounded-full bg-white" />
+              />
               </div>
-            </div>
-          </div>
+              </div>
         </div>
       </div>
     </div>

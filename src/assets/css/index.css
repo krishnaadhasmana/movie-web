@@ -231,3 +231,105 @@ input[type=range].styled-slider.slider-progress::-ms-fill-lower {
   /* default - otherwise it overwrites*/
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
+
+
+@keyframes colorChange {
+  0%, 100% {
+    background-image: linear-gradient(#48497e 10%, #ff0000);
+  }
+  20% {
+    background-image: linear-gradient(#ff0000 10%, #ff7e00);
+  }
+  40% {
+    background-image: linear-gradient(#ff7e00 10%, #ffff00);
+  }
+  60% {
+    background-image: linear-gradient(#ffff00 10%, #7eff00);
+  }
+  80% {
+    background-image: linear-gradient(#7eff00 10%, #00ff00);
+  }
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 5deg;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.GradientBlob {
+  /* background-color: white;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgb(58, 48, 98), rgb(226, 94, 94));
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  overflow: hidden; */
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 650px;
+  border-radius: 100%;
+  background-image: linear-gradient(#1100ff 10%, #ff00f2);
+  filter: blur(250px);
+  transition: all 450ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 15px), -50%);
+  z-index:0;
+  animation: fadeIn 5s;
+  /* animation: pulse 7s infinite; */
+
+  /* left: 50%; */
+  /* top: 50%; */
+  /* translate: -50% -50%; */
+
+}
+
+

@@ -100,25 +100,25 @@ export function PlayerPart(props: PlayerPartProps) {
               </>
             ) : null}
           </Player.LeftSideControls>
-          <div className="flex items-center space-x-3">
-            <Player.Episodes />
-            {status === playerStatus.PLAYING ? (
+          <div className="flex items-center">
+            {/* {status === playerStatus.PLAYING ? (
               <>
                 <Player.Pip />
                 <Player.Airplay />
                 <Player.Chromecast />
               </>
-            ) : null}
+            ) : null} */}
             {status === playerStatus.PLAYBACK_ERROR ||
             status === playerStatus.PLAYING ? (
               <Player.Settings />
             ) : null}
+            <Player.Episodes />
             <Player.Fullscreen />
           </div>
         </div>
         <div className="grid grid-cols-[2.5rem,1fr,2.5rem] gap-3 lg:hidden">
           <div />
-          <div className="flex justify-center space-x-3">
+          <div className="flex justify-center">
             {status === playerStatus.PLAYING ? <Player.Pip /> : null}
             <Player.Episodes />
             {status === playerStatus.PLAYING ? <Player.Settings /> : null}

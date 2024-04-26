@@ -36,14 +36,14 @@
   left: 0;
   --top: theme('colors.background.main');
   --bottom: theme('colors.lightBar.light');
-  --first: conic-gradient(from 90deg at 80% 50%, var(--top), var(--bottom));
-  --second: conic-gradient(from 270deg at 20% 50%, var(--bottom), var(--top));
-  mask-image: radial-gradient(100% 50% at center center, black, transparent);
+  --first: conic-gradient(from 90deg at 80% 70%, var(--top), var(--bottom));
+  --second: conic-gradient(from 270deg at 20% 70%, var(--bottom), var(--top));
+  mask-image: radial-gradient(100% 50% at center center, rgb(0, 0, 0), transparent);
   background-image: var(--first), var(--second);
   background-position-x: 1%, 99%;
   background-position-y: 0%, 0%;
   background-size: 50% 100%, 50% 100%;
-  opacity: 1;
+  opacity: 0.4;
   transform: rotate(180deg) translateZ(0px) translateY(400px);
   transform-origin: center center;
   background-repeat: no-repeat;

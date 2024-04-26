@@ -7,6 +7,7 @@ import { Icons } from "@/components/Icon";
 import { LinksDropdown } from "@/components/LinksDropdown";
 import { Lightbar } from "@/components/utils/Lightbar";
 import { useAuth } from "@/hooks/auth/useAuth";
+import { getGradientStatus, setGradientStatus } from "@/pages/HomePage";
 import { BlurEllipsis } from "@/pages/layouts/SubPageLayout";
 import { conf } from "@/setup/config";
 import { useBannerSize } from "@/stores/banner";
@@ -84,16 +85,18 @@ export function Navigation(props: NavigationProps) {
                 className="block tabbable rounded-full text-xs ssm:text-base"
                 to="/"
               >
-                <BrandPill clickable />
-              </Link>
-              <a
+              {/* <div onClick={() => setGradientStatus(!getGradientStatus())}> */}
+                  <BrandPill clickable />
+                {/* </div>               */}
+                </Link>
+              {/* <a
                 href={conf().DISCORD_LINK}
                 target="_blank"
                 rel="noreferrer"
                 className="text-xl text-white tabbable rounded-full"
               >
                 <IconPatch icon={Icons.DISCORD} clickable downsized />
-              </a>
+              </a> */}
               <a
                 href={conf().GITHUB_LINK}
                 target="_blank"
@@ -102,6 +105,17 @@ export function Navigation(props: NavigationProps) {
               >
                 <IconPatch icon={Icons.GITHUB} clickable downsized />
               </a>
+              <div
+                onClick={() => setGradientStatus(!getGradientStatus())}
+                className="text-xl text-white tabbable rounded-full"
+              >
+                <Link
+                  // className="block tabbable rounded-full text-xs ssm:text-base"
+                  to="/"
+                >
+                  <IconPatch icon={Icons.WAND} clickable downsized />
+                </Link>
+              </div>
             </div>
             <div className="relative pointer-events-auto">
               <LinksDropdown>
