@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 import { mediaItemToId } from "@/backend/metadata/tmdb";
 import { DotList } from "@/components/text/DotList";
-import { getGradientStatus } from "@/pages/HomePage";
 import { Flare } from "@/components/utils/Flare";
+import { getGradientStatus } from "@/pages/HomePage";
 import { MediaItem } from "@/utils/mediaTypes";
 
 import { IconPatch } from "../buttons/IconPatch";
@@ -67,8 +67,8 @@ function MediaCardContent({
 
   return (
     <Flare.Base
-    className={`group -m-3 mb-2 rounded-xl transition-colors duration-100 focus:relative focus:z-10 bg-transparent ${
-      canLink ? "hover:bg-transparent tabbable" : ""
+      className={`group -m-3 mb-2 rounded-xl transition-colors duration-100 focus:relative focus:z-10 bg-transparent ${
+        canLink ? "hover:bg-transparent tabbable" : ""
       }`}
       tabIndex={canLink ? 0 : -1}
       onKeyUp={(e) => e.key === "Enter" && e.currentTarget.click()}

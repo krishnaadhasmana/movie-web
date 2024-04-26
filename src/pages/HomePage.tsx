@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import { GradientBg } from "@/components/media/GradientBg";
+
 import { WideContainer } from "@/components/layout/WideContainer";
+import { GradientBg } from "@/components/media/GradientBg";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useSearchQuery } from "@/hooks/useSearchQuery";
 import { HomeLayout } from "@/pages/layouts/HomeLayout";

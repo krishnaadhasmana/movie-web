@@ -109,8 +109,8 @@ export function Volume(props: Props) {
                     : "rgb(182 193 206)",
                 }}
               />
-              </div>
-              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

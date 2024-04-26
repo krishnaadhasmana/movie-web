@@ -18,12 +18,12 @@ export const VideoPlayerButton = forwardRef<
   VideoPlayerButtonProps
 >((props, ref) => {
   return (
-       <Flare.Base
+    <Flare.Base
       className={`
       group rounded-2xl bg-black transition-colors duration-100 focus:relative focus:z-10 hover:bg-video-context-hoverColor tabbable"
       `}
-      >
-         <Flare.Light
+    >
+      <Flare.Light
         flareSize={100}
         cssColorVar="--colors-mediaCard-hoverAccent"
         backgroundClass="bg-video-context-hoverColor duration-50"
@@ -57,6 +57,6 @@ export const VideoPlayerButton = forwardRef<
           {props.children}
         </button>
       </Flare.Child>
-      </Flare.Base>
+    </Flare.Base>
   );
 });

@@ -85,10 +85,10 @@ export function Navigation(props: NavigationProps) {
                 className="block tabbable rounded-full text-xs ssm:text-base"
                 to="/"
               >
-              {/* <div onClick={() => setGradientStatus(!getGradientStatus())}> */}
-                  <BrandPill clickable />
+                {/* <div onClick={() => setGradientStatus(!getGradientStatus())}> */}
+                <BrandPill clickable />
                 {/* </div>               */}
-                </Link>
+              </Link>
               {/* <a
                 href={conf().DISCORD_LINK}
                 target="_blank"

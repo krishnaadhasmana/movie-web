@@ -183,8 +183,8 @@ export function ProgressBar() {
                   "w-[1rem] min-w-[1rem] h-[1rem] rounded-full transform translate-x-1/2 scale-0 group-hover:scale-100 bg-white transition-[transform] duration-100",
                   isSeeking ? "scale-100" : "",
                 ].join(" ")}
-              />*/}
-            </div> 
+              /> */}
+            </div>
           </div>
         </div>
       </div>
